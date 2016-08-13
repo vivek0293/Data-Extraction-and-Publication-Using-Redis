@@ -30,7 +30,7 @@ begin
 #puts page
 
     open('1470862638440.zip', 'wb') do |file|
-        file.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip').read
+        file.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470866306503.zip').read
         Zip::File.open("1470866306503.zip") do |zipfile|
             zipfile.each do |file|
                 file = file.to_s
