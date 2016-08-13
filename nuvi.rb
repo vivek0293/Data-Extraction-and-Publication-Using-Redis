@@ -19,6 +19,6 @@ begin
 #    puts h
 
     page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
-    puts page.class
+    puts page
 
 end
