@@ -29,7 +29,7 @@ begin
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('app', 'wb') do |file|
+    open('1470870423556.zip', 'wb') do |file|
         file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip').read
         Zip::File.open("1470870423556.zip") do |zipfile|
             zipfile.each do |file|
