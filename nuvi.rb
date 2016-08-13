@@ -23,7 +23,7 @@ begin
 #    link = Nokogiri::HTML(open(links))
 #    puts link
 
-page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470855528931.zip"))
+page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470858984479.zip"))
 #links = page.css("a")[5]
 #link = Nokogiri::HTML(open(links))
 puts page
