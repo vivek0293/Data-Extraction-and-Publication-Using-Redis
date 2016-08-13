@@ -19,7 +19,7 @@ begin
 #    puts h
 
     page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
-    links = page.css("a")
+    links = page.css("a")[0]
     puts links
 
 end
