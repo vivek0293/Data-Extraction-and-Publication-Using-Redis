@@ -6,7 +6,7 @@ begin
     puts "Connected"
     
     open('1470844744092.zip', 'wb') do |fo|
-        fo.print open('http://bitly.com/nuvi-plz/1470844744092.zip').read
+        fo.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470844744092.zip').read
     end
 
 end
