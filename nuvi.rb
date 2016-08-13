@@ -36,7 +36,7 @@ begin
                 file = file.to_s
                 puts file
                 puts"enter:"
-                page = Nokogiri::XML(open(file))
+                page = Nokogiri::XML(open('1470870423556.zip'+file))
                 #doc = File.open(file) { |f| Nokogiri::XML(f) }
                 puts page
                 # do something with file
