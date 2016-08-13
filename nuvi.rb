@@ -29,19 +29,20 @@ begin
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('1470870423556.zip', 'wb') do |file|
-        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip').read
-        Zip::File.open("1470870423556.zip") do |zipfile|
-            zipfile.each do |file|
-                file = file.to_s
-                puts file
-                puts"enter:"
-                page = Nokogiri::XML(open("1470870423556.zip/"+file))
-                #doc = File.open(file) { |f| Nokogiri::XML(f) }
-                puts page
-                # do something with file
-            end
-        end
-    end
+#    open('1470870423556.zip', 'wb') do |file|
+#        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip').read
+#        Zip::File.open("1470870423556.zip") do |zipfile|
+#            zipfile.each do |file|
+#                file = file.to_s
+#                puts file
+#                page = Nokogiri::XML(open("1470870423556.zip/"+file))
+#                #doc = File.open(file) { |f| Nokogiri::XML(f) }
+#                puts page
+#                # do something with file
+#            end
+#        end
+#    end
 
+download = open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip')
+IO.copy_stream(download, '~/my_file.zip')
 end
