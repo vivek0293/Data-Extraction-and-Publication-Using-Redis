@@ -23,12 +23,12 @@ begin
 #    link = Nokogiri::HTML(open(links))
 #    puts link
 
-page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip"))
-#links = page.css("a")[5]
-#link = Nokogiri::HTML(open(links))
-puts page
+#page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip"))
+##links = page.css("a")[5]
+##link = Nokogiri::HTML(open(links))
+#puts page
 
-#open('1470862638440.zip', 'wb') do |file|
-#    file << open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip').read
-#    end
+open('1470862638440.zip', 'wb') do |file|
+    file.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip').read
+    end
 end
