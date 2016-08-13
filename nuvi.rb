@@ -34,8 +34,9 @@ begin
         Zip::File.open("1470862638440.zip") do |zipfile|
             zipfile.each do |file|
                 file = file.to_s
-                doc = File.open(file) { |f| Nokogiri::XML(f) }
-                puts doc
+                puts file
+#                doc = File.open(file) { |f| Nokogiri::XML(f) }
+#                puts doc
                 # do something with file
             end
         end
