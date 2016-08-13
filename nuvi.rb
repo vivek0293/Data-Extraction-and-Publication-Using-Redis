@@ -33,7 +33,9 @@ begin
         file.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip').read
         Zip::File.open("1470862638440.zip") do |zipfile|
             zipfile.each do |file|
-                puts file
+                fil = File.read(file)
+                xml = Nokogiri::XML(fil)
+                puts fil
                 # do something with file
             end
         end
