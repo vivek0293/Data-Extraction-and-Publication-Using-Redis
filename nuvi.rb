@@ -10,12 +10,13 @@ begin
     url = "#{request_uri}#{request_query}"
     buffer = open(url).read
     result = JSON.parse(buffer)
-    puts result
+    #puts result
     h = {}
     doc.xpath('//a[@href]').each do |result|
         h[result.text.strip] = result['href']
     end
     puts h
+    puts "new one"
     
 
 end
