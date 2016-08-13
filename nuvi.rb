@@ -29,8 +29,8 @@ begin
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('/Users/vivekrahul/Desktop/ruby-getting-started', 'wb') do |file|
-        file.print open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip').read
+    open('/Users/vivekrahul/Desktop/', 'wb') do |file|
+        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470870423556.zip').read
         Zip::File.open("1470870423556.zip") do |zipfile|
             zipfile.each do |file|
                 file = file.to_s
