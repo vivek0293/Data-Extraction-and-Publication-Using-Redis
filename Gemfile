@@ -9,7 +9,7 @@ gem 'pg'
 gem 'redis'
 
 gem 'nokogiri' 
-
+gem 'zip'
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
