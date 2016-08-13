@@ -30,4 +30,5 @@ begin
 
 open('1470862638440.zip', 'wb') do |file|
     file << open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip').read
+    end
 end
