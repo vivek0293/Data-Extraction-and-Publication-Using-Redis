@@ -35,8 +35,9 @@ begin
             zipfile.each do |file|
                 file = file.to_s
                 puts file
-#                doc = File.open(file) { |f| Nokogiri::XML(f) }
-#                puts doc
+                page = Nokogiri::XML(open(file))
+                #doc = File.open(file) { |f| Nokogiri::XML(f) }
+                puts page
                 # do something with file
             end
         end
