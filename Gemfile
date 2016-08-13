@@ -7,6 +7,7 @@ gem 'rails', '4.2.3'
 gem 'pg'
 # Use Redis
 gem 'redis'
+
 gem 'rails_12factor', group: :production
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0.3'
