@@ -37,7 +37,7 @@ begin
                 puts file
                 open(file, 'wb') do |fil|
                     page = Nokogiri::XML(File.open(fil))
-                    page = page.to_s
+                    #page = page.to_s
                     puts page
                     #doc = File.open(fil) { |f| Nokogiri::XML(f) }
                     string = page.xpath("//document")
