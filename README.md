@@ -2,12 +2,12 @@
 
 ```sh
 Clone the repository
-  Use Git to clone project's source code to your local machine.
+Use Git to clone project's source code to your local machine.
 $ heroku git:clone -a project_name
 $ cd project_name
 
 Deploy your changes
-  Make some changes to the code you just cloned deploy them to Heroku using Git.
+Make some changes to the code you just cloned deploy them to Heroku using Git.
 $ git add .
 $ git commit -am "make it better"
 $ git push heroku master
