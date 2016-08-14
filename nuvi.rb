@@ -36,8 +36,8 @@ begin
                 file = file.to_s
                 puts file
                 open(file, 'wb') do |fil|
-                    #page = Nokogiri::XML(open(fil))
-                    doc = File.open(fil) { |f| Nokogiri::XML(f) }
+                    page = Nokogiri::XML(IO.read(fil))
+                    #doc = File.open(fil) { |f| Nokogiri::XML(f) }
                     puts doc
                 end
             end
