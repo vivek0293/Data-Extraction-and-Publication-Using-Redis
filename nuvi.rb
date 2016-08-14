@@ -42,6 +42,9 @@ begin
         puts"Insertion Completed"
         key = redis.keys('*')
         puts key
+        ans = gets.chomp.to_s
+        out = redis.get(ans)
+        puts out
         
     elsif choice == 2
     puts"Populating data...."
