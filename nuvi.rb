@@ -33,8 +33,10 @@ begin
 
 
 #redis.flushall
-redis.get("Urk America apestan")
+str = redis.get("Urk America apestan")
+puts str
 #    i = 5
+#    j=1
 #    while i<=10 do
 #        open(a[i], 'wb') do |file|
 #            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
@@ -44,6 +46,8 @@ redis.get("Urk America apestan")
 #                    doc = Nokogiri::XML(xml)
 #                    title = doc.at_xpath('//discussion_title').text
 #                    text = doc.at_xpath('//topic_text').text
+#                    #puts j
+#                    #j = j+1
 #                    puts title
 #                    redis.set(title,text)
 #                    #redis.get("Germany agonises over role of army at home after attacks")
