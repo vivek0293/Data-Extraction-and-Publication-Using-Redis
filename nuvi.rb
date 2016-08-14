@@ -23,6 +23,7 @@ begin
     puts "Enter Choice as '1' for testCase; '2' for entire data:"
     choice = gets.chomp.to_i
     if choice == 1
+        puts"Populating data...."
         while i<=7 do
             open(a[i], 'wb') do |file|
                 file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
@@ -41,6 +42,7 @@ begin
         puts"Insertion Completed"
         
     elsif choice == 2
+    puts"Populating data...."
     while i<=length do
         open(a[i], 'wb') do |file|
             file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
@@ -59,6 +61,6 @@ begin
     puts"Insertion Completed"
 
     else
-        puts"Not working"
+        puts"Invalid Choice"
     end
 end
