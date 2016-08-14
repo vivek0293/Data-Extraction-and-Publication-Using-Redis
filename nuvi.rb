@@ -34,6 +34,7 @@ begin
                         doc = Nokogiri::XML(xml)
                         title = doc.at_xpath('//discussion_title').text
                         text = doc.at_xpath('//topic_text').text
+                        puts title
                         redis.set(title,text)
                     end
                 end
