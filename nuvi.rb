@@ -38,7 +38,7 @@ begin
     i = 5
     while i<=length do
         open(a[i], 'wb') do |file|
-            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470885081404.zip').read
+            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
             Zip::File.open(a[i]) do |zipfile|
                 zipfile.each do |file|
                     xml = zipfile.read(file)
