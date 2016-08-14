@@ -18,20 +18,23 @@ begin
 #        h[result.text.strip] = result['href']
 #    end
 #    puts h
-
+    a = []
     page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
-    links = page.css("a")[5]
+    links = page.css("a")
+    links.each do |item|
+        a.push(item)
+    end
     #link = Nokogiri::HTML(open(links))
-    puts links
+    puts a
 
 #page = Nokogiri::HTML(open(""))
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('1470880989865.zip', 'wb') do |file|
-        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470880989865.zip').read
-        Zip::File.open("1470880989865.zip") do |zipfile|
+    open('1470885081404.zip', 'wb') do |file|
+        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470885081404.zip').read
+        Zip::File.open("1470885081404.zip") do |zipfile|
             zipfile.each do |file|
                 xml = zipfile.read(file)
                 #redis.hmset("DATA",xml)
