@@ -35,7 +35,7 @@ begin
                         title = doc.at_xpath('//discussion_title').text
                         text = doc.at_xpath('//topic_text').text
                         if out.include?text
-                            break
+                            next
                         else
                             out.push(text)
                             redis.rpush('NEWS_XML',text)
