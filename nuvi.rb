@@ -39,6 +39,7 @@ begin
                         else
                             out.push(text)
                             redis.rpush(NEWS_XML,text)
+                        end
                         #redis.set(title,text)
                     end
                 end
