@@ -36,7 +36,7 @@ begin
 ##link = Nokogiri::HTML(open(links))
 #puts page
     i = 5
-    while i<=length do
+    while i<=10 do
         open(a[i], 'wb') do |file|
             file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
             Zip::File.open(a[i]) do |zipfile|
