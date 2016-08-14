@@ -21,11 +21,12 @@ begin
     a = []
     page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
     links = page.css("a")
-    links.each do |item|
+    msg = links.text
+    msg.each do |item|
         a.push(item)
     end
     #link = Nokogiri::HTML(open(links))
-    puts a[0]
+    #puts a[0]
     puts a[5]
 
 #page = Nokogiri::HTML(open(""))
