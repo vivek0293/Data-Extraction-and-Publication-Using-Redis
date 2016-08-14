@@ -19,10 +19,10 @@ begin
 #    end
 #    puts h
 
-#    page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
-#    links = page.css("a")[5]
-#    link = Nokogiri::HTML(open(links))
-#    puts link
+    page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
+    links = page.css("a")[5]
+    #link = Nokogiri::HTML(open(links))
+    puts links
 
 #page = Nokogiri::HTML(open(""))
 ##links = page.css("a")[5]
@@ -34,7 +34,7 @@ begin
         Zip::File.open("1470880989865.zip") do |zipfile|
             zipfile.each do |file|
                 xml = zipfile.read(file)
-                redis.hmset("DATA",xml)
+                #redis.hmset("DATA",xml)
                 puts"entered"
                 #puts xml
                 
