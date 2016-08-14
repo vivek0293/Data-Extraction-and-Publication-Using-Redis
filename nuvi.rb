@@ -29,16 +29,15 @@ begin
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('1470873975391.zip', 'wb') do |file|
-        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470873975391.zip').read
-        Zip::File.open("1470873975391.zip") do |zipfile|
+    open('1470877806474.zip', 'wb') do |file|
+        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470877806474.zip').read
+        Zip::File.open("1470877806474.zip") do |zipfile|
             zipfile.each do |file|
                 file = file.to_s
                 puts file
                 open(file, 'wb') do |fil|
                     puts"helo"
-                    puts fil
-                    page = Nokogiri::XML(File.open('2df7180cc641f87cf8b72ec421b3db68.xml'))
+                    page = Nokogiri::XML(File.open(fil))
                     #page = page.to_s
                     puts page
                     #doc = File.open(fil) { |f| Nokogiri::XML(f) }
