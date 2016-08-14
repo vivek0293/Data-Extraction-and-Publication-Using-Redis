@@ -20,9 +20,9 @@ begin
 #    puts h
     a = []
     page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/"))
-    links = page.css("a")
-    msg = links.text
-    msg.each do |item|
+    links = page.css("a").text
+    #msg = links.text
+    links.each do |item|
         a.push(item)
     end
     #link = Nokogiri::HTML(open(links))
