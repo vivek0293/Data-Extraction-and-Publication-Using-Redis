@@ -33,13 +33,15 @@ begin
                         doc = Nokogiri::XML(xml)
                         title = doc.at_xpath('//discussion_title').text
                         text = doc.at_xpath('//topic_text').text
-                        redis.hset(NEWS_XML,title,text)
+                        redis.hset(title,text)
                     end
                 end
             end
             i=i+1
         end
         puts"Insertion Completed"
+        key = redis.keys('*')
+        puts key
         
     elsif choice == 2
     puts"Populating data...."
