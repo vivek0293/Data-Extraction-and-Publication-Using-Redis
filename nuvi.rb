@@ -40,7 +40,7 @@ begin
                             out.push(text)
                             redis.rpush('NEWS_XML',text)
                         end
-                        #redis.set(title,text)
+                        
                     end
                 end
             end
@@ -48,14 +48,11 @@ begin
         end
         puts"Insertion Completed"
         output = redis.lrange('NEWS_XML',0,-1)
+        #Returns the List Values
         puts output
+        #Returns number of items in list
         puts out.length
-#        key = redis.keys('*')
-#        puts key
-#        puts"Enter a title:"
-#        ans = gets.chomp.to_s
-#        out = redis.get(ans)
-#        puts out
+
 
     elsif choice == 2
         puts"Populating data...."
@@ -70,12 +67,12 @@ begin
                         text = doc.at_xpath('//topic_text').text
                         if out.include?text
                             break
-                            else
+                        else
                             out.push(text)
                             redis.rpush('NEWS_XML',text)
                         end
 
-                        #redis.set(title,text)
+                        
                     end
                 end
             end
@@ -83,15 +80,12 @@ begin
         end
         puts"Insertion Completed"
         output = redis.lrange('NEWS_XML',0,-1)
+        #Returns the List Values
         puts output
+        #Returns number of items in list
         puts out.length
 
-#        key = redis.keys('*')
-#        puts key
-#        puts"Enter a title:"
-#        ans = gets.chomp.to_s
-#        out = redis.get(ans)
-#        puts out
+
 
 
     else
