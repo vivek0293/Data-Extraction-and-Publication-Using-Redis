@@ -48,7 +48,7 @@ begin
                     title = doc.at_xpath('//discussion_title')
                     text = doc.at_xpath('//topic_text')
                     #redis.hmset("DATA",xml)
-                    #puts title
+                    puts title
                     redis.set(title,text)
                     puts i
                     puts"entered"
