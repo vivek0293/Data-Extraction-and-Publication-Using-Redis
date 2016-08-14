@@ -47,6 +47,8 @@ begin
             i=i+1
         end
         puts"Insertion Completed"
+        output = redis.lrange('NEWS_XML',0,-1)
+        puts output
 #        key = redis.keys('*')
 #        puts key
 #        puts"Enter a title:"
