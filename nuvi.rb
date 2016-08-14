@@ -35,6 +35,7 @@ begin
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
+    redis.flushall
     i = 5
     while i<=10 do
         open(a[i], 'wb') do |file|
