@@ -24,17 +24,20 @@ begin
 #    link = Nokogiri::HTML(open(links))
 #    puts link
 
-#page = Nokogiri::HTML(open("http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470862638440.zip"))
+#page = Nokogiri::HTML(open(""))
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
 #
-    open('1470877806474.zip', 'wb') do |file|
-        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470877806474.zip').read
-        Zip::File.open("1470877806474.zip") do |zipfile|
+    open('1470880989865.zip', 'wb') do |file|
+        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470880989865.zip').read
+        Zip::File.open("1470880989865.zip") do |zipfile|
             zipfile.each do |file|
                 xml = zipfile.read(file)
-                puts xml
+                redis.hmset("DATA",xml)
+                puts"entered"
+                #puts xml
+                
 #                file = file.to_s
 #                puts file
 #                puts"helo"
