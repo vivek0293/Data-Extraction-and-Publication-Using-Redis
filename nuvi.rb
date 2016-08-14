@@ -40,9 +40,11 @@ begin
                     #page = page.to_s
                     puts page
                     #doc = File.open(fil) { |f| Nokogiri::XML(f) }
-                    links = page.xpath("//document")
-                    link = Nokogiri::XML(open(links))
-                    puts link
+                    page.xpath("//document").each do
+                        |document_element|
+                        
+                        puts document_element.text
+                    end
                 end
             end
         end
