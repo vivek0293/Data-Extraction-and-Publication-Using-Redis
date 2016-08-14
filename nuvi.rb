@@ -38,15 +38,10 @@ begin
                 open(file, 'wb') do |fil|
                     puts"helo"
                     puts fil
-                    page = Nokogiri::XML(File.open(file))
+                    page = Nokogiri::XML(File.open('2df7180cc641f87cf8b72ec421b3db68.xml'))
                     #page = page.to_s
                     puts page
                     #doc = File.open(fil) { |f| Nokogiri::XML(f) }
-                    page.xpath("//type").each do
-                        |type_element|
-                        
-                        puts type_element.text
-                    end
                 end
             end
         end
