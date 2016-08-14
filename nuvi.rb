@@ -35,25 +35,21 @@ begin
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
-    i =
-    open(a[i], 'wb') do |file|
-        file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470885081404.zip').read
-        Zip::File.open("1470885081404.zip") do |zipfile|
-            zipfile.each do |file|
-                xml = zipfile.read(file)
-                #redis.hmset("DATA",xml)
-                puts"entered"
-                #puts xml
-                
-#                file = file.to_s
-#                puts file
-#                puts"helo"
-#                page = Nokogiri::XML(File.open(file))
-#                #page = page.to_s
-#                puts page
-#                #doc = File.open(fil) { |f| Nokogiri::XML(f) }
+    i = 5
+    while i<=length do
+        open(a[i], 'wb') do |file|
+            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470885081404.zip').read
+            Zip::File.open(a[i]) do |zipfile|
+                zipfile.each do |file|
+                    xml = zipfile.read(file)
+                    #redis.hmset("DATA",xml)
+                    puts i
+                    puts"entered"
+                    #puts xml
 
+                end
             end
         end
+        i=i+1
     end
 end
