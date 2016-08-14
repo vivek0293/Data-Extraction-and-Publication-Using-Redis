@@ -17,12 +17,12 @@ begin
     #To find the number of zip files
     length = a.length
     
-redis.flushall
+    redis.flushall
 
-i = 5
+    i = 5
 
-puts "Enter Choice as '1' for running testCase; '2' for running the entire data:"
-choice = gets.chomp.to_i
+    puts "Enter Choice as '1' for running testCase; '2' for running the entire data:"
+    choice = gets.chomp.to_i
 
     if choice == '1'
         while i<=8 do
