@@ -25,7 +25,8 @@ begin
         a.push(item)
     end
     #link = Nokogiri::HTML(open(links))
-    puts a
+    puts a[0]
+    puts a[5]
 
 #page = Nokogiri::HTML(open(""))
 ##links = page.css("a")[5]
