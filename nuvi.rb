@@ -20,21 +20,26 @@ begin
     redis.flushall
 
     i = 5
-    
-    while i<=7 do
-        open(a[i], 'wb') do |file|
-            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
-            Zip::File.open(a[i]) do |zipfile|
-                zipfile.each do |file|
-                    xml = zipfile.read(file)
-                    doc = Nokogiri::XML(xml)
-                    title = doc.at_xpath('//discussion_title').text
-                    text = doc.at_xpath('//topic_text').text
-                    redis.set(title,text)
+    puts "Enter Choice as '1' for Getting Kit Information by Kit Id; '2' for Getting Kit information by USer API Token:"
+    choice = gets.chomp.to_i
+    if choice == 1
+        while i<=7 do
+            open(a[i], 'wb') do |file|
+                file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
+                Zip::File.open(a[i]) do |zipfile|
+                    zipfile.each do |file|
+                        xml = zipfile.read(file)
+                        doc = Nokogiri::XML(xml)
+                        title = doc.at_xpath('//discussion_title').text
+                        text = doc.at_xpath('//topic_text').text
+                        redis.set(title,text)
+                    end
                 end
             end
+            i=i+1
         end
-        i=i+1
+        puts"Insertion Completed"
+    else
+        puts"Not working"
     end
-    puts"Insertion Completed"
 end
