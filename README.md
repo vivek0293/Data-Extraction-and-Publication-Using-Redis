@@ -1,4 +1,4 @@
-## Steps to deploy project
+## Steps to deploy Project
 
 ```sh
 Clone the repository
@@ -17,6 +17,12 @@ Now you will be entering the heroku’s console where you can execute your scrip
 Run 
 $ ruby nuvi.rb
 ```
-
+## Project Details
+```sh
+I have executed two cases in the assignment.  First case is i am running for a small volume of data 
+and the second case is i am running for the entire dataset. Reason being it takes long time for the 
+entire dataset to populate.
+In both the cases i am returning the entire list and the length of the list.
+```
 
 
