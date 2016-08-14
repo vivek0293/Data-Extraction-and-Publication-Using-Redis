@@ -38,7 +38,8 @@ begin
                 open(file, 'wb') do |fil|
                     page = Nokogiri::XML(IO.read(fil))
                     #doc = File.open(fil) { |f| Nokogiri::XML(f) }
-                    puts page
+                    string = page.xpath("//document")
+                    puts string
                 end
             end
         end
