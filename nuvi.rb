@@ -49,6 +49,7 @@ begin
         puts"Insertion Completed"
         output = redis.lrange('NEWS_XML',0,-1)
         puts output
+        puts out.length
 #        key = redis.keys('*')
 #        puts key
 #        puts"Enter a title:"
@@ -56,33 +57,44 @@ begin
 #        out = redis.get(ans)
 #        puts out
 
-#    elsif choice == 2
-#        puts"Populating data...."
-#        while i<=length do
-#            open(a[i], 'wb') do |file|
-#                file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
-#                Zip::File.open(a[i]) do |zipfile|
-#                    zipfile.each do |file|
-#                        xml = zipfile.read(file)
-#                        doc = Nokogiri::XML(xml)
-#                        title = doc.at_xpath('//discussion_title').text
-#                        text = doc.at_xpath('//topic_text').text
-#                        redis.set(title,text)
-#                    end
-#                end
-#            end
-#            i=i+1
-#        end
-#        puts"Insertion Completed"
+    elsif choice == 2
+        puts"Populating data...."
+        while i<=length do
+            open(a[i], 'wb') do |file|
+                file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
+                Zip::File.open(a[i]) do |zipfile|
+                    zipfile.each do |file|
+                        xml = zipfile.read(file)
+                        doc = Nokogiri::XML(xml)
+                        title = doc.at_xpath('//discussion_title').text
+                        text = doc.at_xpath('//topic_text').text
+                        if out.include?text
+                            break
+                            else
+                            out.push(text)
+                            redis.rpush('NEWS_XML',text)
+                        end
+
+                        #redis.set(title,text)
+                    end
+                end
+            end
+            i=i+1
+        end
+        puts"Insertion Completed"
+        output = redis.lrange('NEWS_XML',0,-1)
+        puts output
+        puts out.length
+
 #        key = redis.keys('*')
 #        puts key
 #        puts"Enter a title:"
 #        ans = gets.chomp.to_s
 #        out = redis.get(ans)
 #        puts out
-#
-#
-#    else
-#        puts"Invalid Choice"
+
+
+    else
+        puts"Invalid Choice"
     end
 end
