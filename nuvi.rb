@@ -31,32 +31,29 @@ begin
     puts length
     puts a[5]
 
-#page = Nokogiri::HTML(open(""))
-##links = page.css("a")[5]
-##link = Nokogiri::HTML(open(links))
-#puts page
-redis.flushall
-#redis.get("Germany agonises over role of army at home after attacks")
-    i = 5
-    while i<=10 do
-        open(a[i], 'wb') do |file|
-            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
-            Zip::File.open(a[i]) do |zipfile|
-                zipfile.each do |file|
-                    xml = zipfile.read(file)
-                    doc = Nokogiri::XML(xml)
-                    title = doc.at_xpath('//discussion_title').text
-                    text = doc.at_xpath('//topic_text').text
-                    puts title
-                    redis.set(title,text)
-                    #redis.get("Germany agonises over role of army at home after attacks")
-                    puts i
-                    puts"entered"
-                    #puts xml
 
-                end
-            end
-        end
-        i=i+1
-    end
+#redis.flushall
+redis.get("Urk America apestan")
+#    i = 5
+#    while i<=10 do
+#        open(a[i], 'wb') do |file|
+#            file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
+#            Zip::File.open(a[i]) do |zipfile|
+#                zipfile.each do |file|
+#                    xml = zipfile.read(file)
+#                    doc = Nokogiri::XML(xml)
+#                    title = doc.at_xpath('//discussion_title').text
+#                    text = doc.at_xpath('//topic_text').text
+#                    puts title
+#                    redis.set(title,text)
+#                    #redis.get("Germany agonises over role of army at home after attacks")
+#                    puts i
+#                    puts"entered"
+#                    #puts xml
+#
+#                end
+#            end
+#        end
+#        i=i+1
+#    end
 end
