@@ -21,7 +21,7 @@ begin
 
     i = 5
     
-    while i<=8 do
+    while i<=7 do
         open(a[i], 'wb') do |file|
             file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/'+a[i]).read
             Zip::File.open(a[i]) do |zipfile|
@@ -36,4 +36,5 @@ begin
         end
         i=i+1
     end
+    puts"Insertion Completed"
 end
