@@ -42,7 +42,9 @@ begin
             Zip::File.open(a[i]) do |zipfile|
                 zipfile.each do |file|
                     xml = zipfile.read(file)
+                    data = xml.discussion_title
                     #redis.hmset("DATA",xml)
+                    puts data
                     puts i
                     puts"entered"
                     #puts xml
