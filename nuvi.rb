@@ -33,14 +33,16 @@ begin
         file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470877806474.zip').read
         Zip::File.open("1470877806474.zip") do |zipfile|
             zipfile.each do |file|
-                file = file.to_s
-                puts file
-                puts"helo"
-                page = Nokogiri::XML(File.open(file))
-                #page = page.to_s
-                puts page
-                #doc = File.open(fil) { |f| Nokogiri::XML(f) }
-                
+                xml = zipfile.read(file)
+                puts xml
+#                file = file.to_s
+#                puts file
+#                puts"helo"
+#                page = Nokogiri::XML(File.open(file))
+#                #page = page.to_s
+#                puts page
+#                #doc = File.open(fil) { |f| Nokogiri::XML(f) }
+
             end
         end
     end
