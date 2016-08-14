@@ -35,7 +35,7 @@ begin
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
-    redis.flushall
+#redis.flushall
     i = 5
     while i<=10 do
         open(a[i], 'wb') do |file|
@@ -49,7 +49,8 @@ begin
                     text = doc.at_xpath('//topic_text')
                     #redis.hmset("DATA",xml)
                     puts title
-                    redis.set(title,text)
+                    #redis.set(title,text)
+                    redis.get("Germany agonises over role of army at home after attacks")
                     puts i
                     puts"entered"
                     #puts xml
