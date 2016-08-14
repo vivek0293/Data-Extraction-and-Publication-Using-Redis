@@ -33,7 +33,7 @@ begin
                         doc = Nokogiri::XML(xml)
                         title = doc.at_xpath('//discussion_title').text
                         text = doc.at_xpath('//topic_text').text
-                        redis.set(title,text)
+                        redis.hset(NEWS_XML,title,text)
                     end
                 end
             end
