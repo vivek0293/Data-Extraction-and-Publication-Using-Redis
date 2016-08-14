@@ -42,9 +42,11 @@ begin
             Zip::File.open(a[i]) do |zipfile|
                 zipfile.each do |file|
                     xml = zipfile.read(file)
-                    data = xml.discussion_title
+                    #data = xml.discussion_title
+                    doc = Nokogiri::XML(xml)
+                    title = doc.at_xpath('//discussion_title')
                     #redis.hmset("DATA",xml)
-                    puts data
+                    puts title
                     puts i
                     puts"entered"
                     #puts xml
