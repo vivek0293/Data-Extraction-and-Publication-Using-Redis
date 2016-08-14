@@ -27,14 +27,16 @@ begin
     end
     #link = Nokogiri::HTML(open(links))
     #puts a[0]
+    length = a.length
+    puts length
     puts a[5]
 
 #page = Nokogiri::HTML(open(""))
 ##links = page.css("a")[5]
 ##link = Nokogiri::HTML(open(links))
 #puts page
-#
-    open('1470885081404.zip', 'wb') do |file|
+    i =
+    open(a[i], 'wb') do |file|
         file.write open('http://feed.omgili.com/5Rh5AMTrc4Pv/mainstream/posts/1470885081404.zip').read
         Zip::File.open("1470885081404.zip") do |zipfile|
             zipfile.each do |file|
